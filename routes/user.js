@@ -3,7 +3,11 @@ const router = express.Router();
 
 //GET routes
 router.get('/', (req, res, next) => {
-    res.render('home');
+    res.render('home', {
+        user: {
+            isLoggedIn: true
+        }
+    });
 })
 
 
