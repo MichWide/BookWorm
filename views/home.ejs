@@ -1,12 +1,18 @@
 <%- include('includes/header') %>
-    <% if(user.isLoggedIn) { %>
-        <%- include('includes/navbar') %>
-            <% } %>
-                <main id="main-body">
-                    <div id="main-body__container" class="container">
-                        <h1>Welcome to
-                            <br>BookWorm!</h1>
-                    </div>
+<% if(user.isLoggedIn) { %>
+<%- include('includes/navbar') %>
+<% } %>
+<main id="main-body">
+    <div id="main-body__container" class="container">
+        <div class="row home_title">
+            <div class="col-sm-6 offset-md-3">
+                <i>
+                    <p class="intro">Welcome to</p>
+                    <p class="intro big">BookWorm</p>
+                </i>
+            </div>
+        </div>
+    </div>
 
-                </main>
-                <%- include('includes/footer') %>
+</main>
+<%- include('includes/footer') %>

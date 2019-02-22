@@ -2,6 +2,19 @@
 * GLOBAL
 **/
 
+/*
+* COLORS
+* MAIN: #a1795a
+* ACCENTS: #d6e0e6
+* DETAILS: #4f2523
+*/
+
+:root {
+    --main-color: #ffbf66;
+    --secondary-color: #430c05;
+    --detail-color: #00353f;
+}
+
 html,
 body {
     width: 100%;
@@ -21,8 +34,9 @@ body {
     top: 0;
 }
 
-.blue {
-    background: #3597d9;
+.color-secondary {
+    background: var(--secondary-color);
+    ;
 }
 
 /**
@@ -34,7 +48,7 @@ body {
 } */
 
 .header-part {
-    background: #f3d702;
+    background: var(--main-color);
 }
 
 .main-header__container,
@@ -61,6 +75,7 @@ body {
 }
 
 #main-header__logo {
+    width: 40%;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     display: flex;
@@ -69,9 +84,10 @@ body {
     cursor: pointer;
 }
 
-#main-header__logo img {
-    max-width: 70px;
+#main-header__logo i.fas.fa-book {
+    color: var(--secondary-color);
     margin-right: 5px;
+    font-size: 4em;
 }
 
 .logo_text {
@@ -79,11 +95,11 @@ body {
     font-weight: 400;
 }
 
-span.logo_text.blue-text {
-    color: #3597d9;
+span.logo_text.color-text {
+    color: var(--secondary-color);
 }
 
-a.btn.blue {
+a.btn.color-secondary {
     color: white;
 }
 
@@ -93,6 +109,7 @@ a.btn.blue {
 
 #main-nav {
     height: 70px;
+    z-index: 999;
 }
 
 .main-nav__container.container {
@@ -124,10 +141,15 @@ a.btn.blue {
     background: transparent;
 }
 
+.main-nav__search input:focus {
+    outline: none;
+}
+
 .main-nav__search i {
     flex: 0 0 auto;
-    margin-left: 5px;
+    margin-left: -10px;
 }
+
 
 .main-nav__buttons {
     width: 40%;
@@ -136,17 +158,22 @@ a.btn.blue {
 .main-nav__buttons a {
     font-size: 1.1em;
     margin-right: 10px;
-    color: #3597d9;
+    color: var(--secondary-color);
     text-decoration: none;
 }
 
 .main-nav__buttons a:hover {
-    color: orange;
+    color: var(--detail-color);
 }
 
 [id*="__buttons"] {
     font-family: 'Roboto', sans-serif;
 }
+
+div#main-header__buttons a:hover {
+    background: var(--detail-color);
+}
+
 
 /**
 * MAIN
@@ -166,4 +193,18 @@ a.btn.blue {
     border-radius: 2px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     font-family: 'Roboto', sans-serif;
+}
+
+.row.home_title {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.intro {
+    font-size: 2em;
+    margin: 0;
+}
+
+.intro.big {
+    font-size: 3em;
 }
