@@ -9,7 +9,19 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 //Internal
+const appRoutes = require('./routes/index')
 const userRoutes = require('./routes/user');
+
+//Database
+const mongoose = require('mongoose');
+
+const db = require('./config/keys').MongoURI;
+
+mongoose.connect(db, {
+        useNewUrlParser: true
+    })
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.log(err));
 
 /**
  * Server configuration
@@ -30,8 +42,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 //Setting up routes
-app.use(userRoutes);
-
+app.use('/user', userRoutes);
+app.use(appRoutes);
 
 //Kickstarting the server
 const PORT = process.env.PORT || 8000;
