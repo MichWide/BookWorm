@@ -1,0 +1,8 @@
+<%- include('includes/elements/header') %>
+    <% if(settings.isLoggedIn) { %>
+        <%- include('includes/elements/navbar') %>
+    <% } %>
+
+    <%-include('includes/displays/' + settings.view) %>
+
+<%- include('includes/elements/footer') %> 
