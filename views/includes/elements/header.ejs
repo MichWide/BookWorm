@@ -28,9 +28,12 @@
                 </i>
             </a>
             <div id="main-header__buttons">
+                <% if(typeof user === 'undefined'){ %>
                 <a href="/user/login" class="btn color-secondary">Login</a>
                 <a href="/user/register" class="btn color-secondary">Register</a>
+                <% } else { %>
                 <a href="/user/logout" class="btn color-secondary">Logout</a>
+                <% } %>
             </div>
         </div>
     </header>
